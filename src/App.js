@@ -11,22 +11,24 @@ import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 import ProductLayout from './components/products/productLayout';
 import ErrorPage from "./components/errorPage";
+import Login from "./components/login";
 
 function App() {
 
   return (
     <>
       <Routes>
-        <Route path={'/'} element={<NavigationBar />}>
-          <Route path={'/home'} element={<HomePage />} />
-          <Route path={'/about'} element={<About />} />
-          <Route path="/product"> 
-            <Route index element={<Products />} />
-            <Route path={':id'} element={<ProductDetails />} />
-            <Route path={'new'} element={<NewProduct />} />
+          <Route path={'/login'} element={<Login />} />
+          <Route path={'/'} element={<NavigationBar />}>
+            <Route path={'/home'} element={<HomePage />} />
+            <Route path={'/about'} element={<About />} />
+            <Route path="/product"> 
+              <Route index element={<Products />} />
+              <Route path={':id'} element={<ProductDetails />} />
+              <Route path={'new'} element={<NewProduct />} />
+            </Route>
+            <Route path={'*'} element={<ErrorPage />} />
           </Route>
-          <Route path={'*'} element={<ErrorPage />} />
-        </Route>
       </Routes>     
     </>
   );

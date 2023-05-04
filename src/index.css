@@ -23,3 +23,13 @@ code {
 .product-main .card {
     margin: 5px;
 }
+
+#login-form {
+  width: 30%;
+  position: absolute;
+  top: 10em;
+  left: 30em;
+  border: 1px solid #DDD;
+  padding: 10px;
+  border-radius: 5px;
+}
